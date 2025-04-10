@@ -1,0 +1,11 @@
+Paleta de cores utilizadas no site:
+
+preto - #000000
+vermelho - #BB3A3F
+azul - #0C007E
+branco - #FFFFFF
+
+comando para ativar tailwind:
+
+npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+
