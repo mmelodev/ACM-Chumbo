@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACM Chumbo - Chumbo para Seu Negócio</title>
+    <link href="./src/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body class="" style="background-color: #1a1a1a">
+    <header class="pt-[80px] flex flex-col items-center">
+      <nav>
+        <div
+          class="h-[100px] px-5 rounded-bl-2xl rounded-br-2xl overflow-hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between"
+          style="background-color: #bb3a3f"
+        >
+          <div>
+            <img
+              src="./media/img/img_acm (1)_logoisolada_sembg.png"
+              alt="logoacm"
+              class="w-50"
+            />
+          </div>
+
+          <!-- BOTÃO DO MENU -->
+          <!--deixar adequado para telas maiores-->
+          <div class="relative">
+            <button
+              id="menu-button"
+              class="bg-white/30 backdrop-blur-sm p-1 mx-5 cursor-pointer inline-flex justify-center md:hidden"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 50 50"
+                fill="white"
+              >
+                <path
+                  d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z 
+                     M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z 
+                     M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div
+            id="dropdown-menu"
+            class="hidden absolute fixed mt-5 mr-2 top-[80px] right-5 z-40 w-56 rounded-md bg-gray-800 shadow-lg ring-1 ring-black/5 md:top-[1px] md:inline-block md:mt-2 md:bg-transparent"
+          >
+            <div class="py-1">
+              <!--melhorar mais o estilo desse menu-->
+              <a
+                href="#contato"
+                class="block px-4 py-2 text-sm text-white md:hover:bg-gray-800"
+                >Contato</a
+              >
+              <a
+                href="#produtos-content"
+                class="block px-4 py-2 text-sm text-white md:hover:bg-gray-800"
+                >Produtos</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <section class="container-img">
+        <div class="slider-wrapper">
+          <div class="slider w-full">
+            <img
+              src="./media/img/acmchumbo poster.png"
+              alt=""
+              id="slide-1"
+              class="md:hidden"
+            />
+            <img
+              src="./media/img/acmchumbo poster(1).png"
+              alt=""
+              id="slide-2"
+              class="md:hidden"
+            />
+            <img
+              src="./media/img/acmchumbo poster(2).png"
+              alt=""
+              id="slide-3"
+              class="md:hidden"
+            />
+
+            <img
+              src="./media/img/desktop (1).png"
+              alt=""
+              id="slidedesk-1"
+              class="hidden md:block"
+            />
+            <img
+              src="./media/img/desktop (2).png"
+              alt=""
+              id="slidedesk-2"
+              class="hidden md:block"
+            />
+            <img
+              src="./media/img/desktop (3).png"
+              alt=""
+              id="slidedesk-3"
+              class="hidden md:block"
+            />
+          </div>
+
+          <div class="nav-slider">
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
+            <a href="#slide-3"></a>
+          </div>
+          <div class="nav-slider">
+            <a href="#slidedesk-1"></a>
+            <a href="#slidedesk-2"></a>
+            <a href="#slidedesk-3"></a>
+          </div>
+        </div>
+      </section>
+
+      <div id="main-btn" class="">
+        <button
+          class="bg-blue-700 text-white font-bold px-8 py-3 rounded-2xl shadow-black shadow-sm cursor-pointer hover:bg-blue-950 animate-bounce"
+        >
+          <a href="https://wa.link/zdumm1" target="_blank"
+            >Solicitar Orçamento</a
+          >
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="beneficios mb-15">
+        <div
+          class="beneficios-content flex flex-col items-center gap-4 text-center"
+        >
+          <!--SVGs
+          posso editar no tailwind para telas maiores
+          -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            width="100"
+            height="100"
+            viewBox="0 0 256 256"
+          >
+            <g
+              style="
+                stroke: none;
+                stroke-width: 0;
+                stroke-dasharray: none;
+                stroke-linecap: butt;
+                stroke-linejoin: miter;
+                stroke-miterlimit: 10;
+                fill: white;
+                opacity: 1;
+              "
+              transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+            >
+              <path
+                d="M 89.034 43.825 L 74.452 27.423 c -0.725 -0.816 -1.767 -1.284 -2.859 -1.284 H 58.256 v -0.448 c 0 -3.723 -3.029 -6.752 -6.751 -6.752 H 6.752 C 3.029 18.94 0 21.969 0 25.692 v 35.098 c 0 2.219 1.805 4.024 4.023 4.024 h 10.374 c 0.827 3.573 4.029 6.247 7.85 6.247 s 7.023 -2.674 7.85 -6.247 h 25.193 h 2.967 h 10.701 c 0.827 3.573 4.029 6.247 7.85 6.247 s 7.023 -2.674 7.85 -6.247 h 1.519 c 2.109 0 3.825 -1.715 3.825 -3.825 V 46.367 C 90 45.43 89.657 44.527 89.034 43.825 z M 85.213 43.993 H 67.936 c -0.336 0 -0.609 -0.274 -0.609 -0.61 v -7.785 c 0 -0.336 0.273 -0.609 0.609 -0.609 h 9.272 L 85.213 43.993 z M 6.752 21.907 h 44.753 c 2.086 0 3.784 1.698 3.784 3.785 v 0.448 v 22.322 H 2.967 v -22.77 C 2.967 23.605 4.665 21.907 6.752 21.907 z M 22.246 68.093 c -2.81 0 -5.097 -2.286 -5.097 -5.097 s 2.287 -5.097 5.097 -5.097 s 5.097 2.286 5.097 5.097 S 25.057 68.093 22.246 68.093 z M 30.218 61.846 c -0.561 -3.902 -3.917 -6.913 -7.972 -6.913 s -7.411 3.011 -7.972 6.913 H 4.023 c -0.582 0 -1.056 -0.474 -1.056 -1.057 v -9.361 h 52.322 v 10.417 H 30.218 z M 76.807 68.093 c -2.811 0 -5.097 -2.286 -5.097 -5.097 s 2.286 -5.097 5.097 -5.097 s 5.097 2.286 5.097 5.097 S 79.617 68.093 76.807 68.093 z M 86.175 61.846 h -1.397 c -0.561 -3.902 -3.917 -6.913 -7.972 -6.913 s -7.411 3.011 -7.972 6.913 H 58.256 v -32.74 h 13.337 c 0.244 0 0.478 0.105 0.641 0.288 l 2.335 2.627 h -6.634 c -1.972 0 -3.576 1.604 -3.576 3.576 v 7.785 c 0 1.972 1.604 3.577 3.576 3.577 h 19.097 v 14.029 C 87.033 61.462 86.649 61.846 86.175 61.846 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: white;
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+            </g>
+          </svg>
+
+          <h2 class="text-white font-bold">
+            ENTREGA COM <span class="text-blue-400">AGILIDADE E SEGURANÇA</span>
+          </h2>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            width="80"
+            height="80"
+            viewBox="0 0 256 256"
+            xml:space="preserve"
+            class="my-5"
+          >
+            <g
+              style="
+                stroke: none;
+                stroke-width: 0;
+                stroke-dasharray: none;
+                stroke-linecap: butt;
+                stroke-linejoin: miter;
+                stroke-miterlimit: 10;
+                fill: none;
+                fill-rule: nonzero;
+                opacity: 1;
+              "
+              transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+            >
+              <path
+                d="M 42.981 61.73 c -0.028 0 -0.056 0 -0.084 -0.001 c -0.825 -0.023 -1.604 -0.385 -2.153 -1 l -16.962 -18.98 c -1.104 -1.235 -0.998 -3.132 0.238 -4.236 c 1.235 -1.105 3.131 -0.998 4.236 0.238 l 14.848 16.614 L 84.879 12.59 c 1.172 -1.172 3.07 -1.172 4.242 0 c 1.172 1.171 1.172 3.071 0 4.242 L 45.102 60.852 C 44.539 61.415 43.775 61.73 42.981 61.73 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: white;
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 45 90 C 20.187 90 0 69.813 0 45 C 0 20.187 20.187 0 45 0 c 1.657 0 3 1.343 3 3 s -1.343 3 -3 3 C 23.495 6 6 23.495 6 45 s 17.495 39 39 39 s 39 -17.495 39 -39 c 0 -1.657 1.343 -3 3 -3 s 3 1.343 3 3 C 90 69.813 69.813 90 45 90 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: white;
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+            </g>
+          </svg>
+
+          <h2 class="text-white font-bold">
+            PRODUTO PREMIUM
+            <span class="text-blue-400">COMPARE E COMPROVE</span>
+          </h2>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            width="80"
+            height="80"
+            viewBox="0 0 256 256"
+            xml:space="preserve"
+            class="my-5"
+          >
+            <g
+              style="
+                stroke: none;
+                stroke-width: 0;
+                stroke-dasharray: none;
+                stroke-linecap: butt;
+                stroke-linejoin: miter;
+                stroke-miterlimit: 10;
+                fill: none;
+                fill-rule: nonzero;
+                opacity: 1;
+              "
+              transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+            >
+              <path
+                d="M 85.187 28.793 H 4.813 c -1.104 0 -2 -0.896 -2 -2 V 16.255 c 0 -5.367 4.366 -9.733 9.733 -9.733 h 64.908 c 5.366 0 9.732 4.366 9.732 9.733 v 10.539 C 87.187 27.898 86.291 28.793 85.187 28.793 z M 6.813 24.793 h 76.374 v -8.539 c 0 -3.161 -2.571 -5.733 -5.732 -5.733 H 12.546 c -3.162 0 -5.733 2.572 -5.733 5.733 V 24.793 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 43.13 90 H 12.546 c -5.367 0 -9.733 -4.366 -9.733 -9.733 V 26.793 c 0 -1.104 0.896 -2 2 -2 h 80.374 c 1.104 0 2 0.896 2 2 v 19.15 c 0 1.104 -0.896 2 -2 2 s -2 -0.896 -2 -2 v -17.15 H 6.813 v 51.473 c 0 3.161 2.572 5.733 5.733 5.733 H 43.13 c 1.104 0 2 0.896 2 2 S 44.235 90 43.13 90 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 20.855 17.045 c -1.104 0 -2 -0.896 -2 -2 V 2 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 v 13.045 C 22.855 16.149 21.96 17.045 20.855 17.045 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 69.145 17.045 c -1.104 0 -2 -0.896 -2 -2 V 2 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 v 13.045 C 71.145 16.149 70.249 17.045 69.145 17.045 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(233, 233, 233);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 45 17.045 c -1.104 0 -2 -0.896 -2 -2 V 2 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 v 13.045 C 47 16.149 46.104 17.045 45 17.045 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 20.814 41.984 h -1.519 c -0.685 0 -1.241 -0.555 -1.241 -1.241 v -1.519 c 0 -0.685 0.555 -1.241 1.241 -1.241 h 1.519 c 0.685 0 1.241 0.555 1.241 1.241 v 1.519 C 22.055 41.429 21.5 41.984 20.814 41.984 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 37.444 41.984 h -1.519 c -0.685 0 -1.241 -0.555 -1.241 -1.241 v -1.519 c 0 -0.685 0.555 -1.241 1.241 -1.241 h 1.519 c 0.685 0 1.241 0.555 1.241 1.241 v 1.519 C 38.685 41.429 38.13 41.984 37.444 41.984 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 54.074 41.984 h -1.519 c -0.685 0 -1.241 -0.555 -1.241 -1.241 v -1.519 c 0 -0.685 0.555 -1.241 1.241 -1.241 h 1.519 c 0.685 0 1.241 0.555 1.241 1.241 v 1.519 C 55.315 41.429 54.76 41.984 54.074 41.984 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 70.705 41.984 h -1.519 c -0.685 0 -1.241 -0.555 -1.241 -1.241 v -1.519 c 0 -0.685 0.555 -1.241 1.241 -1.241 h 1.519 c 0.685 0 1.241 0.555 1.241 1.241 v 1.519 C 71.945 41.429 71.39 41.984 70.705 41.984 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 20.814 58.614 h -1.519 c -0.685 0 -1.241 -0.555 -1.241 -1.241 v -1.519 c 0 -0.685 0.555 -1.241 1.241 -1.241 h 1.519 c 0.685 0 1.241 0.555 1.241 1.241 v 1.519 C 22.055 58.059 21.5 58.614 20.814 58.614 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 37.444 58.614 h -1.519 c -0.685 0 -1.241 -0.555 -1.241 -1.241 v -1.519 c 0 -0.685 0.555 -1.241 1.241 -1.241 h 1.519 c 0.685 0 1.241 0.555 1.241 1.241 v 1.519 C 38.685 58.059 38.13 58.614 37.444 58.614 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 20.814 75.244 h -1.519 c -0.685 0 -1.241 -0.555 -1.241 -1.241 v -1.519 c 0 -0.685 0.555 -1.241 1.241 -1.241 h 1.519 c 0.685 0 1.241 0.555 1.241 1.241 v 1.519 C 22.055 74.689 21.5 75.244 20.814 75.244 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 37.444 75.244 h -1.519 c -0.685 0 -1.241 -0.555 -1.241 -1.241 v -1.519 c 0 -0.685 0.555 -1.241 1.241 -1.241 h 1.519 c 0.685 0 1.241 0.555 1.241 1.241 v 1.519 C 38.685 74.689 38.13 75.244 37.444 75.244 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 66.77 90 c -11.258 0 -20.417 -9.159 -20.417 -20.417 c 0 -11.259 9.159 -20.418 20.417 -20.418 s 20.417 9.159 20.417 20.418 C 87.187 80.841 78.027 90 66.77 90 z M 66.77 53.165 c -9.053 0 -16.417 7.365 -16.417 16.418 S 57.717 86 66.77 86 s 16.417 -7.364 16.417 -16.417 S 75.822 53.165 66.77 53.165 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 64.683 77.052 c -0.016 0 -0.032 0 -0.048 -0.001 c -0.563 -0.013 -1.095 -0.264 -1.464 -0.689 l -4.244 -4.896 c -0.723 -0.834 -0.633 -2.098 0.202 -2.821 c 0.834 -0.722 2.099 -0.635 2.821 0.202 l 2.804 3.235 l 7.95 -8.326 c 0.762 -0.801 2.029 -0.828 2.827 -0.065 c 0.799 0.763 0.828 2.028 0.065 2.827 l -9.468 9.916 C 65.751 76.829 65.229 77.052 64.683 77.052 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+            </g>
+          </svg>
+
+          <h2 class="text-center text-white font-bold">
+            DESDE 2010 <br />
+            <span class="text-blue-400">FORNECENDO CHUMBO DE QUALIDADE</span>
+          </h2>
+        </div>
+      </section>
+
+      <section class="produtos bg-gray-200">
+        <div
+          class="produtos-content flex flex-col items-center text-center px-10 py-10"
+          style="background-image: url('./media/img/bg-section-produtos.jpg')"
+          id="produtos-content"
+        >
+          <h3 class="mb-10 font-bold">
+            A ACM CHUMBO É UMA EMPRESA ESPECIALIZADA EM CHUMBOS PARA PESCA,
+            CHUMBO COLANTE E PACOTES VARIADOS DE SUA PREFERÊNCIA
+          </h3>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:px-100">
+            <img src="./media/img/cabo (1).png" alt="" class="rounded-2xl" />
+            <img src="./media/img/cabo (2).png" alt="" class="rounded-2xl" />
+            <img src="./media/img/cabo (3).png" alt="" class="rounded-2xl" />
+            <img src="./media/img/cabo (4).png" alt="" class="rounded-2xl" />
+            <img src="./media/img/cabo (5).png" alt="" class="rounded-2xl" />
+            <img src="./media/img/cabo (6).png" alt="" class="rounded-2xl" />
+            <img src="./media/img/cabo (7).png" alt="" class="rounded-2xl" />
+          </div>
+
+          <div class="btn-produtos">
+            <button
+              class="bg-blue-700 text-white font-bold px-8 py-3 mt-10 rounded-2xl shadow-black shadow-sm cursor-pointer hover:bg-blue-950"
+            >
+              <a href="https://wa.link/0bcx1h" target="_blank"
+                >Solicitar Orçamento</a
+              >
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="abrangencia md:flex md:justify-between">
+        <div
+          class="abrangencia-content flex flex-col gap-6 px-5 md:items-center md:flex-row"
+        >
+          <div
+            class="flex flex-col gap-6 md:justify-between pt-20 md:pt-0 md:pr-40 md:pl-20"
+          >
+            <h3 class="font-bold" style="color: #bb3a3f">ABRANGÊNCIA</h3>
+
+            <h2 class="font-bold text-white text-lg md:text-3xl">
+              ATENDEMOS TODAS AS REGIÕES DE BELÉM, ANANINDEUA E CIDADES PRÓXIMAS
+            </h2>
+
+            <p class="text-white">
+              Com nossa equipe preparada para transportar cargas variadas de
+              chumbo,
+              <span class="font-bold"
+                >a ACM chega até você com agilidade e segurança.</span
+              >
+            </p>
+          </div>
+        </div>
+        <div class="md:size-4/12 m-10 md:m-0 right-[100px]">
+          <img
+            src="./media/img/pexels-karolina-grabowska-4506249.jpg"
+            alt=""
+            class="rounded-md"
+          />
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-20 md:px-100" style="background-color: #bb3a3f">
+      <div class="contato flex flex-col gap-6 px-5" id="contato">
+        <h3 class="font-bold text-white">ADQUIRA OS PRODUTOS ACM</h3>
+
+        <h2 class="font-bold text-white text-3xl">ENTRE EM CONTATO</h2>
+
+        <p class="text-white">
+          Atendimento de segunda à sábado <br />
+          08:00h às 18:00h
+        </p>
+
+        <div class="flex gap-5">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            width="45"
+            height="45"
+            viewBox="0 0 256 256"
+            xml:space="preserve"
+          >
+            <g
+              style="
+                stroke: none;
+                stroke-width: 0;
+                stroke-dasharray: none;
+                stroke-linecap: butt;
+                stroke-linejoin: miter;
+                stroke-miterlimit: 10;
+                fill: none;
+                fill-rule: nonzero;
+                opacity: 1;
+              "
+              transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+            >
+              <path
+                d="M 38.789 51.211 l 10.876 10.876 c 0.974 0.974 2.471 1.194 3.684 0.543 l 13.034 -6.997 c 0.964 -0.518 2.129 -0.493 3.07 0.066 l 19.017 11.285 c 1.357 0.805 1.903 2.489 1.268 3.933 c -1.625 3.698 -4.583 10.476 -5.758 13.473 c -0.247 0.631 -0.615 1.209 -1.127 1.652 c -12.674 10.986 -37.89 -2.4 -57.191 -21.701 C 6.358 45.039 -7.028 19.823 3.958 7.149 c 0.444 -0.512 1.022 -0.88 1.652 -1.127 c 2.996 -1.175 9.775 -4.133 13.473 -5.758 c 1.444 -0.635 3.128 -0.089 3.933 1.268 l 11.285 19.017 c 0.558 0.941 0.583 2.106 0.066 3.07 L 27.37 36.651 c -0.651 1.213 -0.431 2.71 0.543 3.684 C 27.913 40.335 38.789 51.211 38.789 51.211 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 90 49.5 h -9 C 81 27.168 62.832 9 40.5 9 V 0 C 67.794 0 90 22.206 90 49.5 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 72.5 49.5 h -9 c 0 -12.682 -10.317 -23 -23 -23 v -9 C 58.145 17.5 72.5 31.855 72.5 49.5 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+            </g>
+          </svg>
+          <h3 class="text-white">
+            Telefone Fixo <br />
+            <span class="font-bold text-lg">91 8593-8463</span>
+          </h3>
+        </div>
+        <div class="flex gap-5">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            width="45"
+            height="45"
+            viewBox="0 0 256 256"
+            xml:space="preserve"
+          >
+            <g
+              style="
+                stroke: none;
+                stroke-width: 0;
+                stroke-dasharray: none;
+                stroke-linecap: butt;
+                stroke-linejoin: miter;
+                stroke-miterlimit: 10;
+                fill: none;
+                fill-rule: nonzero;
+                opacity: 1;
+              "
+              transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+            >
+              <path
+                d="M 81.382 77.935 H 8.618 C 3.866 77.935 0 74.068 0 69.316 V 20.684 c 0 -4.752 3.866 -8.618 8.618 -8.618 h 72.764 c 4.752 0 8.618 3.866 8.618 8.618 v 48.633 C 90 74.068 86.134 77.935 81.382 77.935 z M 8.618 16.065 C 6.072 16.065 4 18.137 4 20.684 v 48.633 c 0 2.547 2.072 4.618 4.618 4.618 h 72.764 c 2.547 0 4.618 -2.071 4.618 -4.618 V 20.684 c 0 -2.546 -2.071 -4.618 -4.618 -4.618 H 8.618 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 45 48.971 c -1.142 0 -2.284 -0.246 -3.348 -0.737 L 1.161 29.531 L 2.839 25.9 l 40.49 18.703 c 1.062 0.49 2.279 0.491 3.342 0 l 40.404 -18.663 l 1.678 3.631 L 48.349 48.233 C 47.284 48.725 46.143 48.971 45 48.971 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(1 0 0 1 0 0) "
+                stroke-linecap="round"
+              />
+            </g>
+          </svg>
+          <h3 class="text-white">
+            E-mail <br />
+            <span class="font-bold text-lg">acmchumbo@hotmail.com</span>
+          </h3>
+        </div>
+        <div class="flex gap-5">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            width="45"
+            height="45"
+            viewBox="0 0 256 256"
+            xml:space="preserve"
+          >
+            <g
+              style="
+                stroke: none;
+                stroke-width: 0;
+                stroke-dasharray: none;
+                stroke-linecap: butt;
+                stroke-linejoin: miter;
+                stroke-miterlimit: 10;
+                fill: none;
+                fill-rule: nonzero;
+                opacity: 1;
+              "
+              transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+            >
+              <path
+                d="M 31.336 8.741 c -0.078 -1.71 -0.35 -2.878 -0.747 -3.9 c -0.403 -1.072 -1.036 -2.043 -1.853 -2.846 c -0.802 -0.817 -1.774 -1.45 -2.846 -1.854 c -1.022 -0.397 -2.19 -0.668 -3.9 -0.746 c -1.713 -0.078 -2.261 -0.097 -6.624 -0.097 s -4.911 0.019 -6.624 0.097 c -1.71 0.078 -2.878 0.35 -3.9 0.747 C 3.769 0.546 2.798 1.178 1.996 1.996 c -0.817 0.802 -1.45 1.773 -1.854 2.846 c -0.397 1.022 -0.668 2.19 -0.746 3.9 c -0.079 1.714 -0.097 2.261 -0.097 6.625 c 0 4.364 0.019 4.911 0.097 6.625 c 0.078 1.71 0.35 2.878 0.747 3.9 c 0.403 1.072 1.036 2.043 1.853 2.846 c 0.802 0.817 1.774 1.45 2.846 1.853 c 1.022 0.397 2.19 0.669 3.9 0.747 c 1.713 0.078 2.261 0.097 6.624 0.097 s 4.911 -0.018 6.624 -0.097 c 1.71 -0.078 2.878 -0.35 3.9 -0.747 c 2.158 -0.834 3.864 -2.541 4.699 -4.699 c 0.397 -1.022 0.669 -2.19 0.747 -3.9 c 0.078 -1.714 0.097 -2.261 0.097 -6.625 S 31.414 10.455 31.336 8.741 z M 28.444 21.858 c -0.071 1.567 -0.333 2.417 -0.553 2.983 c -0.541 1.401 -1.648 2.509 -3.049 3.049 c -0.566 0.22 -1.417 0.482 -2.983 0.553 c -1.694 0.077 -2.202 0.094 -6.492 0.094 c -4.291 0 -4.799 -0.016 -6.492 -0.094 c -1.566 -0.071 -2.417 -0.333 -2.983 -0.553 c -0.698 -0.258 -1.329 -0.668 -1.847 -1.202 c -0.534 -0.518 -0.944 -1.149 -1.202 -1.847 c -0.22 -0.566 -0.482 -1.417 -0.553 -2.983 c -0.077 -1.694 -0.094 -2.202 -0.094 -6.492 s 0.016 -4.798 0.094 -6.492 C 2.359 7.306 2.62 6.456 2.84 5.89 C 3.098 5.192 3.509 4.56 4.042 4.042 C 4.561 3.508 5.192 3.098 5.89 2.84 c 0.566 -0.22 1.417 -0.482 2.983 -0.553 c 1.694 -0.077 2.202 -0.093 6.492 -0.093 h 0 c 4.29 0 4.798 0.016 6.492 0.094 c 1.567 0.071 2.417 0.333 2.983 0.553 c 0.698 0.258 1.329 0.668 1.847 1.202 c 0.534 0.518 0.944 1.15 1.202 1.848 c 0.22 0.566 0.482 1.417 0.553 2.983 c 0.077 1.694 0.094 2.202 0.094 6.492 S 28.521 20.164 28.444 21.858 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(2.8008 0 0 2.8008 1.9639999999999986 1.9639999999999702) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 15.365 7.115 c -4.557 0 -8.25 3.694 -8.25 8.25 s 3.694 8.251 8.25 8.251 c 4.557 0 8.251 -3.694 8.251 -8.251 S 19.922 7.115 15.365 7.115 z M 15.365 20.721 c -2.957 0 -5.355 -2.398 -5.355 -5.356 s 2.398 -5.356 5.356 -5.356 c 2.958 0 5.356 2.398 5.356 5.356 S 18.323 20.721 15.365 20.721 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(2.8008 0 0 2.8008 1.9639999999999986 1.9639999999999702) "
+                stroke-linecap="round"
+              />
+              <path
+                d="M 25.87 6.789 c 0 1.065 -0.863 1.928 -1.928 1.928 c -1.065 0 -1.928 -0.863 -1.928 -1.928 c 0 -1.065 0.863 -1.928 1.928 -1.928 S 25.87 5.724 25.87 6.789 z"
+                style="
+                  stroke: none;
+                  stroke-width: 1;
+                  stroke-dasharray: none;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 10;
+                  fill: rgb(255, 255, 255);
+                  fill-rule: nonzero;
+                  opacity: 1;
+                "
+                transform=" matrix(2.8008 0 0 2.8008 1.9639999999999986 1.9639999999999702) "
+                stroke-linecap="round"
+              />
+            </g>
+          </svg>
+          <h3 class="text-white">
+            Instagram <br />
+            <span class="font-bold text-lg">@acmchumbo4</span>
+          </h3>
+        </div>
+
+        <div
+          class="whatsapp-bar bg-green-400 text-white font-bold px-4 py-3 mt-5 rounded-4xl shadow-black shadow-sm cursor-pointer md:hover:bg-green-700"
+        >
+          <a
+            href="https://wa.link/0bcx1h"
+            target="_blank"
+            class="flex justify-between items-center"
+          >
+            <h3 class="">Converse conosco pelo WhatsApp</h3>
+
+            <div class="whats-app">
+              <img class="group" src="./media/img/group0.svg" /></div
+          ></a>
+        </div>
+      </div>
+
+      <div class="footer-institucional px-5 mt-10 flex flex-col items-center">
+        <img
+          src="./media/img/img_acm (1)_logoisolada_sembg.png"
+          alt=""
+          class="size-9/12 md:size-7/12"
+        />
+
+        <hr class="my-5 bg-white h-1 w-full rounded-2xl" />
+
+        <p class="text-center text-white">
+          Empresa de Comércio de Metais ACM - Rodovia Mário Covas, N° 305,
+          66650-180 - Ananindeua (Pará) - CPNJ: 37.452.041/0001-29 - TELEFONE:
+          (91) 98524-2763 - Indústria 100% Brasileira <br />
+          &copy Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+    <script src="./src/script.js"></script>
+  </body>
+</html>
