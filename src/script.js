@@ -1,9 +1,9 @@
-const menuButton = document.getElementById('menu-button');
-const dropdownMenu = document.getElementById('dropdown-menu');
+const toggleButton = document.querySelector('.toggle-button')
+const dropdown = document.querySelector('.dropdown-menu')
 
-menuButton.addEventListener('click', () => {
-  dropdownMenu.classList.toggle('hidden');
-});
+toggleButton.addEventListener('click', () => {
+  dropdown.classList.toggle('top-16')
+})
 
 //--------------------
 
