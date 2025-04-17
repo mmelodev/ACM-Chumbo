@@ -8,4 +8,11 @@ branco - #FFFFFF
 comando para ativar tailwind:
 
 npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+----------------------
+
+comando para enviar o código e as mudanças para i github (nem sei se ainda se preciso enviar esse código inteiro)
+
+git remote add origin https://github.com/mmelodev/ACM-Chumbo.git
+git branch -M main
+git push -u origin main
 
